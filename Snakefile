@@ -43,6 +43,8 @@ rule make_summary:
     input:
         dag=os.path.join(config['summary_dir'], 'dag.svg'),
         env='environment_pinned.yml',
+        get_mut_bind_mono_expr=config['mut_bind-monomer_expr'],
+        get_mut_bind_di_expr=config['mut_bind-dimer_expr'],
         variant_counts_file=config['variant_counts_file'],
         count_variants=nb_markdown('count_variants.ipynb'),
         fit_deer_ACE2_titrations='results/summary/compute_deer-ACE2_Kd.md',
@@ -138,6 +140,8 @@ rule collapse_scores:
         config['hamster_Kds_file'],
         config['bat_Kds_file'],
         config['cat_Kds_file'],
+        config['mut_bind-dimer_expr'],
+        config['mut_bind-monomer_expr']
     output:
         config['final_variant_scores_mut_file'],
         md='results/summary/collapse_scores.md',
@@ -251,4 +255,19 @@ rule count_variants:
         nb='count_variants.ipynb'
     shell:
         "python scripts/run_nb.py {params.nb} {output.nb_markdown}"
+        
+        
+rule get_mut_bind_monomer_expr:
+    """Download SARS-CoV-2 DMS for monomer ACE2-binding and expression from URL."""
+    output:
+        file=config['mut_bind-monomer_expr']
+    run:
+        urllib.request.urlretrieve(config['mut_bind-monomer_expr_url'], output.file)
+        
+rule get_mut_bind_dimer_expr:
+    """Download SARS-CoV-2 DMS for dimer ACE2-binding and expression from URL."""
+    output:
+        file=config['mut_bind-dimer_expr']
+    run:
+        urllib.request.urlretrieve(config['mut_bind-dimer_expr_url'], output.file)
         

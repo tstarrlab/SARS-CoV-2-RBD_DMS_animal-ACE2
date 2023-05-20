@@ -91,6 +91,5 @@ The following commands were then run to activate `git-lfs`:
 You may need to run this if you are tracking these files and haven't installed `git-lfs` in your user account.
 Then the large results files were added for tracking with:
 ```
-git lfs track results/variants/codon_variant_table_*.csv
 git lfs track results/counts/variant_counts.csv
 ```
