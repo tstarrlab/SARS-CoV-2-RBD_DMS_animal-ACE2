@@ -341,7 +341,7 @@ across our measurement range, and spot check curves whose fit parameters
 hit the different boundary conditions of the fit variables.
 
 We successfully generated *K*<sub>D</sub> estimates for 144335 of our
-pool1 barcodes (68.62%), and 135078 of our pool2 barcodes (73.89%).
+pool1 barcodes (68.62%), and 135077 of our pool2 barcodes (73.89%).
 
 Why were estimates not returned for some barcodes? The histograms below
 show that many barcodes with unsuccessful titration fits have lower

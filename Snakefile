@@ -85,13 +85,13 @@ rule make_summary:
                Creates a [variant counts file]({path(input.variant_counts_file)})
                giving counts of each barcoded variant in each condition.
 
-            3. [Fit deer ACE2 titration curves]({path(input.fit_deer_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.deer_APN_Kds_file)}).
+            3. [Fit deer ACE2 titration curves]({path(input.fit_deer_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.deer_ACE2_Kds_file)}).
             
-            4. [Fit hamster ACE2 titration curves]({path(input.fit_hamster_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.hamster_APN_Kds_file)}).
+            4. [Fit hamster ACE2 titration curves]({path(input.fit_hamster_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.hamster_ACE2_Kds_file)}).
             
-            5. [Fit bat ACE2 titration curves]({path(input.fit_bat_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.bat_APN_Kds_file)}).
+            5. [Fit bat ACE2 titration curves]({path(input.fit_bat_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.bat_ACE2_Kds_file)}).
             
-            6. [Fit cat ACE2 titration curves]({path(input.fit_cat_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.cat_APN_Kds_file)}).
+            6. [Fit cat ACE2 titration curves]({path(input.fit_cat_ACE2_titrations)}) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file]({path(input.cat_ACE2_Kds_file)}).
             
             7. [Derive final genotype-level phenotypes from replicate barcoded sequences]({path(input.collapse_scores)}).
                Generates final phenotypes, recorded in [this file]({path(input.mut_phenos_file)}).

@@ -398,7 +398,7 @@ plot.titration <- function(row,output.text=F){
   Kd_var <- "Kd_hamster"
   fit <- nls(y.vals ~ a*(x.vals/(x.vals+Kd))+b,
              start=list(a=3,b=1,Kd=10^-11),
-             lower=list(a=2,b=0.8,Kd=1e-15),
+             lower=list(a=2,b=1,Kd=1e-15),
              upper=list(a=3,b=1.5,Kd=1e-5), #constrain Kd to be no higher than the 10x highest concentration value
              algorithm="port") 
   if(!is.na(dt[row,get(Kd_var)])){
