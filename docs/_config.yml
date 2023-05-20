@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: PD-CoV RBD DMS
+title: SARS-CoV-2 animal ACE2 DMS
 email: tyler.starr@biochem.utah.edu
-description: Interactive visualizations of PD-CoV RBD DMS data
-baseurl: "/PD-CoV-RBD_DMS" # the subpath of your site, e.g. /blog
+description: Interactive visualizations of SARS-CoV-2 RBD DMS data
+baseurl: "/SARS-CoV-2-RBD_DMS_animal-ACE2" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
