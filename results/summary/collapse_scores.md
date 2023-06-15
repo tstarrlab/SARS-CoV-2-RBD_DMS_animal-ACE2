@@ -82,12 +82,12 @@ sessionInfo()
     ## [17] lifecycle_1.0.3  munsell_0.5.0    gtable_0.3.0     cellranger_1.1.0
     ## [21] rvest_1.0.2      evaluate_0.15    knitr_1.37       tzdb_0.2.0      
     ## [25] fastmap_1.1.0    fansi_1.0.2      broom_0.7.12     Rcpp_1.0.8      
-    ## [29] backports_1.4.1  scales_1.2.1     jsonlite_1.8.0   fs_1.5.2        
+    ## [29] backports_1.4.1  scales_1.2.1     jsonlite_1.8.4   fs_1.5.2        
     ## [33] hms_1.1.1        digest_0.6.29    stringi_1.7.6    grid_4.1.3      
     ## [37] cli_3.6.0        tools_4.1.3      magrittr_2.0.2   crayon_1.5.0    
     ## [41] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    
     ## [45] lubridate_1.8.0  rstudioapi_0.13  assertthat_0.2.1 rmarkdown_2.13  
-    ## [49] httr_1.4.2       R6_2.5.1         compiler_4.1.3
+    ## [49] httr_1.4.6       R6_2.5.1         compiler_4.1.3
 
 ## Setup
 

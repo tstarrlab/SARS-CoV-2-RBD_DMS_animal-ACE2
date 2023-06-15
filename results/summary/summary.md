@@ -14,7 +14,7 @@ workflow:
 1. Download prior data for barcode-variant lookup tables and huACE2 binding from prior repositories [1](https://github.com/jbloomlab/SARS-CoV-2-RBD_DMS) and [2](https://github.com/jbloomlab/SARS-CoV-2-RBD_DMS_Omicron).
 
 2. [Count variants by barcode](count_variants.md).
-   Creates a [variant counts file](../counts/variant_counts.csv)
+   Creates a [variant counts file](../counts/variant_counts.csv.gz)
    giving counts of each barcoded variant in each condition.
 
 3. [Fit deer ACE2 titration curves](compute_deer-ACE2_Kd.md) to calculate per-barcode K<sub>D,app</sub>, recorded in [this file](../binding_scores/deer-ACE2_bc_binding.csv).

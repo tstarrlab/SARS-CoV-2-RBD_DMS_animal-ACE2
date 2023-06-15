@@ -49,7 +49,7 @@ print(f"Using dms_variants version {dms_variants.__version__}")
 ```
 
     Using alignparse version 0.6.0
-    Using dms_variants version 1.4.2
+    Using dms_variants version 1.4.3
 
 
 Ignore warnings that clutter output:
@@ -6128,10 +6128,10 @@ _ = barcode_fate_plot.draw()
 
 ```python
 print(f"Writing variant counts to {config['variant_counts_file']}")
-counts.to_csv(config['variant_counts_file'], index=False)
+counts.to_csv(config['variant_counts_file'], index=False, compression='gzip')
 ```
 
-    Writing variant counts to results/counts/variant_counts.csv
+    Writing variant counts to results/counts/variant_counts.csv.gz
 
 
 The [CodonVariantTable](https://jbloomlab.github.io/dms_variants/dms_variants.codonvarianttable.html#dms_variants.codonvarianttable.CodonVariantTable) has lots of nice functions that can be used to analyze the counts it contains.

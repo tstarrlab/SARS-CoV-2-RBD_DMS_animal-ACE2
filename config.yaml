@@ -39,7 +39,7 @@ mut_bind-dimer_expr: results/prior_DMS_data/mutant_ACE2-dimer-binding_expression
 
 
 counts_dir: results/counts
-variant_counts_file: results/counts/variant_counts.csv
+variant_counts_file: results/counts/variant_counts.csv.gz
 
 binding_scores_dir: results/binding_scores
 deer_Kds_file: results/binding_scores/deer-ACE2_bc_binding.csv
