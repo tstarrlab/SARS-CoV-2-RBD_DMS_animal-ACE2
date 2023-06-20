@@ -28,4 +28,8 @@ workflow:
 7. [Derive final genotype-level phenotypes from replicate barcoded sequences](collapse_scores.md).
    Generates final phenotypes, recorded in [this file](../final_variant_scores/final_variant_scores.csv).
 
-8. Make interactive data visualizations, available [here](https://tstarrlab.github.io/SARS-CoV-2-RBD_DMS_animal-ACE2/)
+8. [Compute difference metrics for sitewise mutational profiles for different VOC-ACE2 pairs](ACE2_epistatic_shifts.md).
+   Generates final phenotypes, recorded in [this file](../final_variant_scores/final_variant_scores.csv).
+
+
+9. Make interactive data visualizations, available [here](https://tstarrlab.github.io/SARS-CoV-2-RBD_DMS_animal-ACE2/)

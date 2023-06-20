@@ -57,6 +57,7 @@ rule make_summary:
         cat_ACE2_Kds_file=config['cat_Kds_file'],
         collapse_scores='results/summary/collapse_scores.md',
         mut_phenos_file=config['final_variant_scores_mut_file'],
+        ACE2_epistatic_shifts='results/summary/ACE2_epistatic_shifts.md',
         heatmap_viz=os.path.join(config['visualization_dir'], "heatmap.html")
     output:
         summary = os.path.join(config['summary_dir'], 'summary.md')
@@ -96,7 +97,11 @@ rule make_summary:
             7. [Derive final genotype-level phenotypes from replicate barcoded sequences]({path(input.collapse_scores)}).
                Generates final phenotypes, recorded in [this file]({path(input.mut_phenos_file)}).
 
-            8. Make interactive data visualizations, available [here](https://tstarrlab.github.io/SARS-CoV-2-RBD_DMS_animal-ACE2/)
+            8. [Compute difference metrics for sitewise mutational profiles for different VOC-ACE2 pairs]({path(input.ACE2_epistatic_shifts)}).
+               Generates final phenotypes, recorded in [this file]({path(input.mut_phenos_file)}).
+
+
+            9. Make interactive data visualizations, available [here](https://tstarrlab.github.io/SARS-CoV-2-RBD_DMS_animal-ACE2/)
 
             """
             ).strip())
@@ -132,6 +137,25 @@ rule interactive_heatmap_plot:
         html=os.path.join(config['visualization_dir'], "heatmap.html")
     notebook: "RBD-Heatmaps-Interactive-Visualization.ipynb"
 
+rule ACE2_epistatic_shifts:
+    input:
+        config['final_variant_scores_mut_file'],
+    output:
+        config['JSD_file'],
+        md='results/summary/ACE2_epistatic_shifts.md',
+        md_files=directory('results/summary/ACE2_epistatic_shifts_files')
+    envmodules:
+        'R/4.1.3'
+    params:
+        nb='ACE2_epistatic_shifts.Rmd',
+        md='ACE2_epistatic_shifts.md',
+        md_files='ACE2_epistatic_shifts_files'
+    shell:
+        """
+        R -e \"rmarkdown::render(input=\'{params.nb}\')\";
+        mv {params.md} {output.md};
+        mv {params.md_files} {output.md_files}
+        """
 
 
 rule collapse_scores:

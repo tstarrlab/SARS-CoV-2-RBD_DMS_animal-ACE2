@@ -316,6 +316,21 @@ x <- dt_mutant[library=="pool1" & target=="Wuhan_Hu_1" & wildtype!=mutant,mean_b
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/replicate_correlations_WH1.pdf",sep=""),useDingbats=F))
 ```
 
+Correlations in n_bc?
+
+``` r
+par(mfrow=c(2,2))
+x <- dt_mutant[library=="pool1" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_deer]; y <- dt_mutant[library=="pool2" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_deer]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="deer ACE2 n_bc, WH1");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_hamster]; y <- dt_mutant[library=="pool2" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_hamster]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="hamster ACE2 n_bc, WH1");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_bat]; y <- dt_mutant[library=="pool2" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_bat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="bat ACE2 n_bc, WH1");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_cat]; y <- dt_mutant[library=="pool2" & target=="Wuhan_Hu_1" & wildtype!=mutant,n_bc_bind_cat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="cat ACE2 n_bc, WH1");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+```
+
+<img src="collapse_scores_files/figure-gfm/plot_correlations_WH1_n_bc-1.png" style="display: block; margin: auto;" />
+
 Correlations for Eta background
 
 ``` r
@@ -334,6 +349,19 @@ x <- dt_mutant[library=="pool1" & target=="E484K" & wildtype!=mutant,mean_bind_c
 ``` r
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/replicate_correlations_Eta.pdf",sep=""),useDingbats=F))
 ```
+
+``` r
+par(mfrow=c(2,2))
+x <- dt_mutant[library=="pool1" & target=="E484K" & wildtype!=mutant,n_bc_bind_deer]; y <- dt_mutant[library=="pool2" & target=="E484K" & wildtype!=mutant,n_bc_bind_deer]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="deer ACE2 n_bc, E484K");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="E484K" & wildtype!=mutant,n_bc_bind_hamster]; y <- dt_mutant[library=="pool2" & target=="E484K" & wildtype!=mutant,n_bc_bind_hamster]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="hamster ACE2 n_bc, E484K");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="E484K" & wildtype!=mutant,n_bc_bind_bat]; y <- dt_mutant[library=="pool2" & target=="E484K" & wildtype!=mutant,n_bc_bind_bat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="bat ACE2 n_bc, E484K");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="E484K" & wildtype!=mutant,n_bc_bind_cat]; y <- dt_mutant[library=="pool2" & target=="E484K" & wildtype!=mutant,n_bc_bind_cat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="cat ACE2 n_bc, E484K");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+```
+
+<img src="collapse_scores_files/figure-gfm/plot_correlations_E484K_n_bc-1.png" style="display: block; margin: auto;" />
 
 Correlations for Omicron BA.2 background. For hamster and deer, seeing
 lots of variants look like they have higher ACE2 affinity in rep2 bu
@@ -366,6 +394,19 @@ x <- dt_mutant[library=="pool1" & target=="BA2" & wildtype!=mutant,mean_bind_cat
 ``` r
 invisible(dev.print(pdf, paste(config$final_variant_scores_dir,"/replicate_correlations_BA2.pdf",sep=""),useDingbats=F))
 ```
+
+``` r
+par(mfrow=c(2,2))
+x <- dt_mutant[library=="pool1" & target=="BA2" & wildtype!=mutant,n_bc_bind_deer]; y <- dt_mutant[library=="pool2" & target=="BA2" & wildtype!=mutant,n_bc_bind_deer]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="deer ACE2 n_bc, BA2");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="BA2" & wildtype!=mutant,n_bc_bind_hamster]; y <- dt_mutant[library=="pool2" & target=="BA2" & wildtype!=mutant,n_bc_bind_hamster]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="hamster ACE2 n_bc, BA2");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="BA2" & wildtype!=mutant,n_bc_bind_bat]; y <- dt_mutant[library=="pool2" & target=="BA2" & wildtype!=mutant,n_bc_bind_bat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="bat ACE2 n_bc, BA2");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+
+x <- dt_mutant[library=="pool1" & target=="BA2" & wildtype!=mutant,n_bc_bind_cat]; y <- dt_mutant[library=="pool2" & target=="BA2" & wildtype!=mutant,n_bc_bind_cat]; plot(x,y,pch=16,col="#00000020",xlab="n_bc replicate 1",ylab="n_bc replicate 2",main="cat ACE2 n_bc, BA2");model <- lm(y~x);abline(a=0,b=1,lty=2,col="red");legend("topleft",legend=paste("R2: ",round(summary(model)$r.squared,3),sep=""),bty="n")
+```
+
+<img src="collapse_scores_files/figure-gfm/plot_correlations_BA2_n_bc-1.png" style="display: block; margin: auto;" />
 
 ## Calculate per-mutant score across libraries
 
@@ -493,6 +534,7 @@ dt_og_monomer[target=="Wuhan-Hu-1_v1",target:="Wuhan-Hu-1"]
 
 dt_final[,bind_human_monomer:=as.numeric(NA)]
 dt_final[,delta_bind_human_monomer:=as.numeric(NA)]
+dt_final[,n_bc_human_monomer:=as.numeric(NA)]
 dt_final[,bind_human_dimer:=as.numeric(NA)]
 dt_final[,delta_bind_human_dimer:=as.numeric(NA)]
 
@@ -503,6 +545,7 @@ for(i in 1:nrow(dt_final)){
   }
   dt_final[i,"bind_human_monomer"] <- dt_og_monomer[target==dt_final[i,target] & position==dt_final[i,position] & mutant==dt_final[i,mutant],bind]
   dt_final[i,"delta_bind_human_monomer"] <- dt_og_monomer[target==dt_final[i,target] & position==dt_final[i,position] & mutant==dt_final[i,mutant],delta_bind]
+  dt_final[i,"n_bc_human_monomer"] <- dt_og_monomer[target==dt_final[i,target] & position==dt_final[i,position] & mutant==dt_final[i,mutant],n_bc_bind]
   dt_final[i,"expr"] <- dt_og_monomer[target==dt_final[i,target] & position==dt_final[i,position] & mutant==dt_final[i,mutant],expr]
   dt_final[i,"delta_expr"] <- dt_og_monomer[target==dt_final[i,target] & position==dt_final[i,position] & mutant==dt_final[i,mutant],delta_expr]
 }
@@ -990,7 +1033,7 @@ dt_final[,.(target,wildtype,position,mutant,mutation,
             bind_hamster,delta_bind_hamster,n_bc_hamster,n_libs_hamster,hamster_rep1,n_bc_hamster_rep1,hamster_rep2,n_bc_hamster_rep2,
             bind_bat,delta_bind_bat,n_bc_bat,n_libs_bat,bat_rep1,n_bc_bat_rep1,bat_rep2,n_bc_bat_rep2,
             bind_cat,delta_bind_cat,n_bc_cat,n_libs_cat,cat_rep1,n_bc_cat_rep1,cat_rep2,n_bc_cat_rep2,
-            bind_human_monomer,delta_bind_human_monomer,
+            bind_human_monomer,delta_bind_human_monomer,n_bc_human_monomer,
             bind_human_dimer,delta_bind_human_dimer)] %>%
   mutate_if(is.numeric, round, digits=5) %>%
   write.csv(file=config$final_variant_scores_mut_file, row.names=F,quote=F)
